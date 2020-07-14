@@ -17,7 +17,6 @@ public class Home {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10);
-
     }
 
     /**Закрываем chromedriver после выполнения всех тестов*/
@@ -27,14 +26,23 @@ public class Home {
     }
 
     /**Проверка некорректной авторизации*/
-    @Test
+    @Test(description = "Проверка на некорректную авторизацию"
+            ,dependsOnMethods = "homePage")
     public void negativeLogonPage() {
         LogonPage page = new LogonPage(driver);
         page.negativeAuth();
     }
 
+    /**Проверка корректной авторизации*/
+    @Test(description = "Проверка на корректную авторизацию"
+            ,dependsOnMethods = "homePage")
+    public void positiveLogonPage() {
+        LogonPage page = new LogonPage(driver);
+        page.positiveAuth();
+    }
+
     /**Тест главной страницы*/
-    @Test
+    @Test(description = "Тест главной страницы")
     public void homePage() {
         HomePage page = new HomePage(driver);
         page.start();
