@@ -9,7 +9,9 @@ public class LogonPage extends BasePage {
         super(driver);
     }
 
-    String url = "https://koyvistoynen.ru/admin";
+    Variables variables = new Variables();
+    Links links = new Links();
+    String url = links.getAuthPage();
     By username = By.id("user_login");
     By password = By.id("user_pass");
     By buttonSubmit = By.id("wp-submit");
@@ -46,11 +48,19 @@ public class LogonPage extends BasePage {
 
     public void negativeAuth(){
         open();
-        setUserName("BadLogin");
-        setPassword("BadPassword");
+        setUserName(variables.userEmailNegative);
+        setPassword(variables.userPasswordNegative);
         rememberMeCheck();
         submit();
         view_error();
+    }
 
+    public void positiveAuth(){
+        open();
+        setUserName(variables.userEmailPositive);
+        setPassword(variables.userPasswordPositive);
+        rememberMeCheck();
+        submit();
+        view_error();
     }
 }
