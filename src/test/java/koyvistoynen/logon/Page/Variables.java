@@ -1,4 +1,4 @@
-package koyvistoynen.logon;
+package koyvistoynen.logon.Page;
 
 public class Variables {
     String userEmailNegative = "exampleNegative@email.ru";

@@ -1,4 +1,4 @@
-package koyvistoynen.logon;
+package koyvistoynen.logon.Page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +51,7 @@ public class HomePage extends BasePage {
         checkRubric();
         checkTags();
         additionalPage();
+
     }
 
 }

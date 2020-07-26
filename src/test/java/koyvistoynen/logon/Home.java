@@ -1,5 +1,8 @@
 package koyvistoynen.logon;
 
+import koyvistoynen.logon.Page.HomePage;
+import koyvistoynen.logon.Page.LogonPage;
+import koyvistoynen.logon.Page.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -46,6 +49,14 @@ public class Home {
     public void homePage() {
         HomePage page = new HomePage(driver);
         page.start();
+    }
+
+    /**Тест страницы поиска*/
+    @Test(description = "Тест страницы поиска")
+    public void check_search() {
+        SearchPage page = new SearchPage(driver);
+        page.check_search();
+
     }
 
 }

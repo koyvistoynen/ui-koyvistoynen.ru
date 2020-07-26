@@ -1,4 +1,4 @@
-package koyvistoynen.logon;
+package koyvistoynen.logon.Page;
 
 public class Links {
     private String homePage = "https://koyvistoynen.ru";
@@ -9,6 +9,11 @@ public class Links {
     private String authPage = homePage + "/admin";
     public String getAuthPage() {
         return authPage;
+    }
+
+    private String searchPage = homePage + "/?s=";
+    public String getSearchPage() {
+        return searchPage;
     }
 
 }
