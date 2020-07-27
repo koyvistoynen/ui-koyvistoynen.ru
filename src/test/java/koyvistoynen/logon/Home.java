@@ -36,6 +36,14 @@ public class Home {
         page.negativeAuth();
     }
 
+    /**Проверка сообщений ошибок авторизации**/
+    @Test(description = "Проверка на некорректную авторизацию"
+            ,dependsOnMethods = "homePage")
+    public void blankField() {
+        LogonPage page = new LogonPage(driver);
+        page.blankField();
+    }
+
     /**Проверка корректной авторизации*/
     @Test(description = "Проверка на корректную авторизацию"
             ,dependsOnMethods = "homePage")
