@@ -61,7 +61,7 @@ public class Home {
 
     /**Тест страницы поиска*/
     @Test(description = "Тест страницы поиска")
-    public void check_search() {
+    public void checkSearch() {
         SearchPage page = new SearchPage(driver);
         page.check_search();
 
