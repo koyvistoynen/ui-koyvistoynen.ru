@@ -5,5 +5,5 @@ public class Variables {
     String userPasswordNegative = "exampleNegativePass"; //некорректный password
     String userEmailPositive = "examplePositive@email.ru"; //правильный email
     String userPasswordPositive = "examplePositivePass"; //правильный password
-    String searchRandomText="adhikwuqhiduhq2ihdba"; //случайный набор текстя
+    String searchRandomText="adhikwuqhiduhq2ihdba"; //случайный набор текстя1
 }
