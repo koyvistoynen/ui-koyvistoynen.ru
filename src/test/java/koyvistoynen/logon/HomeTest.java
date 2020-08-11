@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
 
-public class Home {
+public class HomeTest {
 
     public WebDriver driver;
     public WebDriverWait wait;
