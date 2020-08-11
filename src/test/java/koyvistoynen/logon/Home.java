@@ -5,6 +5,7 @@ import koyvistoynen.logon.Page.LogonPage;
 import koyvistoynen.logon.Page.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
@@ -18,7 +19,9 @@ public class Home {
     @BeforeSuite
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, 10);
     }
 
