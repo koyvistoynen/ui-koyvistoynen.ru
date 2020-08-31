@@ -3,9 +3,11 @@ package koyvistoynen.logon.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -25,6 +27,7 @@ public class HomePage extends BasePage {
     By page_prev = By.xpath("//*[@id=\"main\"]/nav/div/a[1]");
     By newEntries = By.xpath(".//*[text()='Свежие записи']/.");
     By rubric = By.xpath(".//*[text()='Рубрики']/.");
+    By cat_rubric = By.id("cat");
     By tags = By.xpath(".//*[text()='Метки']/.");
     By docker = By.xpath(".//*[text()='Docker']/.");
     By backup = By.xpath(".//*[text()='Резервное копирование']/.");
@@ -89,6 +92,14 @@ public class HomePage extends BasePage {
         find(rubric).isDisplayed();
     }
 
+    /**Проверка количества рубрик **/
+    public void checkCountRubric() {
+        Select count = new Select(find(cat_rubric));
+        List<WebElement> count_l = count.getOptions();
+        int num = count_l.size() - 1; //убираем заголовок списка
+        Assert.assertEquals(11,num);
+    }
+
     /**Проверка отображения облака меток**/
     public void checkTags() {
         find(tags).isDisplayed();
@@ -106,6 +117,7 @@ public class HomePage extends BasePage {
         checkSiteTitle();
         checkNewEntries();
         checkRubric();
+        checkCountRubric();
         checkTags();
         additionalPage();
         checkPageLink();
